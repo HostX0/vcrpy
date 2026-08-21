@@ -77,7 +77,7 @@ class MockClientResponse(ClientResponse):
     def release(self):
         pass
 
-    @property
+    @functools.cached_property
     def content(self):
         s = MockStream()
         s.feed_data(self._body)
